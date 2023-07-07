@@ -30,3 +30,12 @@ Ensure that your Google Spreadsheet contains the "Summary" and "History" sheets.
 Copy and paste the **'recordHistory'** function into the script editor.
 To record the history automatically, set up a time-driven trigger in the script editor to run this function (Edit > Current project's triggers > Add Trigger).
 This function takes the values from the "B1", "D1", "F1", "H1", and "J1" cells of the "Summary" sheet and appends them as a new row in the "History" sheet, along with the current date (formatted as "MM/dd/yyyy" and using Pacific Daylight Time). The history is recorded only on weekdays.
+
+# Script: RSI Calculation
+The project includes a RSI function that automates the process of calculating the Relative Strength Index (RSI) for different stocks.
+
+**Usage**
+Ensure that your Google Spreadsheet contains the "Summary" and "Select Stock" sheets.
+Copy and paste the RSI function into the script editor.
+Set up a time-driven trigger in the script editor to run this function as needed (Edit > Current project's triggers > Add Trigger).
+This function retrieves stock tickers from rows 4 to 8 and 14 to 28 of the "Summary" sheet, writes each ticker to the "Select Stock" sheet, calculates the RSI using a VLOOKUP formula, and writes the calculated RSI (rounded to an integer) back to the "Summary" sheet. The RSI calculation is dependent on the "Select Stock" sheet's data structure, specifically, the 9th column of the range D:L contains the RSI. Please adjust your spreadsheet and the script based on your specific needs.
